@@ -1,4 +1,4 @@
-package org.gdelattre.orm.hibernate.dao;
+package org.gdelattre.orm.hibernate.service;
 
 import static org.junit.Assert.*;
 
@@ -13,10 +13,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-config.xml"})
-public class EmployeeDAOImplTest {
+public class EmployeeManagerImplTest {
 	
 	@Autowired
-	EmployeeDAOImpl employeeDao;
+	EmployeeManager employeeManager;
 	
 	private EmployeeEntity getEmployee(){
 		
@@ -35,12 +35,12 @@ public class EmployeeDAOImplTest {
 		
 		final EmployeeEntity employee = getEmployee();
 		
-		employeeDao.addEmployee(employee);
+		employeeManager.addEmployee(employee);
 		
-		final List<EmployeeEntity> expectedEmployees = employeeDao.getAllEmployees();
+		final List<EmployeeEntity> expectedEmployees = employeeManager.getAllEmployees();
 		final EmployeeEntity expectedEmployee = expectedEmployees.get(0);
 		
-		assertEquals(1, employeeDao.getAllEmployees().size());
+		assertEquals(1, employeeManager.getAllEmployees().size());
 		assertEquals("Guillaume", expectedEmployee.getFirstname());
 		assertEquals("Delattre", expectedEmployee.getLastname());
 		assertEquals("guillaume.delattre@test.com", expectedEmployee.getEmail());
@@ -49,13 +49,13 @@ public class EmployeeDAOImplTest {
 	}
 	
 	@Test
-	public void testdeleteEmployeeAndGetAllEmployees(){
+	public void testDeleteEmployeeAndGetAllEmployees(){
 		
-		final EmployeeEntity employee = employeeDao.getAllEmployees().get(0);
+		final EmployeeEntity employee = employeeManager.getAllEmployees().get(0);
 		
-		employeeDao.deleteEmployee(employee.getId());
+		employeeManager.deleteEmployee(employee.getId());
 		
-		assertEquals(0, employeeDao.getAllEmployees().size());
+		assertEquals(0, employeeManager.getAllEmployees().size());
 		
 	}
 

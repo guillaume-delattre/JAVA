@@ -56,11 +56,13 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 
 	@Override
 	public void deleteEmployee(Integer employeeId) {
+		Transaction tx = sessionFactory.getCurrentSession().beginTransaction();
 		EmployeeEntity employee = (EmployeeEntity) sessionFactory.getCurrentSession().load(
 				EmployeeEntity.class, employeeId);
         if (null != employee) {
         	this.sessionFactory.getCurrentSession().delete(employee);
         }
+        tx.commit();
 	}
 
 //  version without transaction
