@@ -10,15 +10,6 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-/**
- * Note : To use this sample with the transaction managed you need to add this line in 
- *        spring-cnfig.xml :
- *          <prop key="hibernate.current_session_context_class">managed</prop>
- *        instead of :
- *          <prop key="hibernate.current_session_context_class">thread</prop>
- * @author guillaume
- *
- */
 @Repository
 //@Service
 public class EmployeeDAOImpl implements EmployeeDAO  {
