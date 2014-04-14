@@ -16,19 +16,19 @@ public class EmployeeManagerImpl implements EmployeeManager {
     private EmployeeDAO employeeDAO;
 
 	@Override
-	@Transactional
+//	@Transactional
 	public void addEmployee(EmployeeEntity employee) {
 		employeeDAO.addEmployee(employee);
 	}
 
 	@Override
-	@Transactional
+//	@Transactional
 	public List<EmployeeEntity> getAllEmployees() {
 		return employeeDAO.getAllEmployees();
 	}
 
 	@Override
-	@Transactional
+//	@Transactional
 	public void deleteEmployee(Integer employeeId) {
 		employeeDAO.deleteEmployee(employeeId);
 	}

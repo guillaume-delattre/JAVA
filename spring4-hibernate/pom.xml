@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.gdelattre.orm.hibernate</groupId>
 	<artifactId>spring4-hibernate</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>Spring4 - hibernate configuration</name>
 	<url>http://maven.apache.org</url>

@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class EmployeeDAOImplTest {
 	
 	@Autowired
-	EmployeeDAOImpl employeeDao;
+	EmployeeDAO employeeDao;
 	
 	private EmployeeEntity getEmployee(){
 		
