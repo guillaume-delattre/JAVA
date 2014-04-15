@@ -17,13 +17,6 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 	@Autowired
     private SessionFactory sessionFactory;
 	
-//  version without transaction 	
-//	@Override
-//	public void addEmployee(EmployeeEntity employee) {
-//		this.sessionFactory.openSession().save(employee);
-//	}
-	
-	
 	@Override
 //	@Transactional
 	public void addEmployee(EmployeeEntity employee) {
@@ -71,14 +64,6 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 		return employees;
 	}
 
-//  version without transaction	
-//	@SuppressWarnings("unchecked")
-//	@Override
-//	public List<EmployeeEntity> getAllEmployees() {
-//		List<EmployeeEntity> employees = this.sessionFactory.openSession().createQuery("from EmployeeEntity").list();
-//		return employees;
-//	}
-
 	@Override
 //	@Transactional
 	public void deleteEmployee(Integer employeeId) {
@@ -106,15 +91,4 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 		}
 	}
 
-//  version without transaction
-//	@Override
-//	public void deleteEmployee(Integer employeeId) {
-//		final Session session = sessionFactory.openSession();
-//		EmployeeEntity employee = (EmployeeEntity) session.load(
-//				EmployeeEntity.class, employeeId);
-//        if (null != employee) {
-//        	session.delete(employee);
-//        }
-//	}
-	
 }
