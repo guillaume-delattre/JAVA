@@ -28,7 +28,7 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 			session.save(employee);
 			tx.commit();
 		}
-		catch(HibernateException exception){
+		catch(Exception exception){
 			tx.rollback();
 		}
 		finally{
@@ -49,7 +49,7 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 			employees = session.createQuery("from EmployeeEntity").list();
 			tx.commit();
 		}
-		catch(HibernateException exception){
+		catch(Exception exception){
 			// logs
 		}
 		finally{
@@ -73,7 +73,7 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 	        }
 	        tx.commit();
 		}
-		catch(HibernateException exception){
+		catch(Exception exception){
 			tx.rollback();
 		}
 		finally{
