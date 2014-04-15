@@ -25,8 +25,6 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 		try{
 			session = this.sessionFactory.openSession();
 			tx = session.beginTransaction();
-	//		Transaction tx = sessionFactory.getCurrentSession().beginTransaction();
-	//		this.sessionFactory.getCurrentSession().save(employee);
 			session.save(employee);
 			tx.commit();
 		}
@@ -48,11 +46,7 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 		try{
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-	//		Transaction tx = sessionFactory.getCurrentSession().beginTransaction();
 			employees = session.createQuery("from EmployeeEntity").list();
-	//		List<EmployeeEntity> employees = 
-	//				this.sessionFactory.getCurrentSession().
-	//					createQuery("from EmployeeEntity").list();
 			tx.commit();
 		}
 		catch(HibernateException exception){
@@ -72,13 +66,9 @@ public class EmployeeDAOImpl implements EmployeeDAO  {
 		try{
 			session = sessionFactory.openSession();
 			tx = session.beginTransaction();
-	//		Transaction tx = sessionFactory.getCurrentSession().beginTransaction();
-	//		EmployeeEntity employee = (EmployeeEntity) sessionFactory.getCurrentSession().load(
-	//				EmployeeEntity.class, employeeId);
 			EmployeeEntity employee = (EmployeeEntity) session.load(
 					EmployeeEntity.class, employeeId);
 	        if (null != employee) {
-	//        	this.sessionFactory.getCurrentSession().delete(employee);
 	        	session.delete(employee);
 	        }
 	        tx.commit();
