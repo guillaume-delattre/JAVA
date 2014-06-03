@@ -6,9 +6,13 @@
 	<groupId>org.gdelattre.jsf</groupId>
 	<artifactId>jsflab</artifactId>
 	<version>1.0.0</version>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 
-	<description>An example using JSF 2.</description>
+	<description>A module which contains sample projects using JSF 2.</description>
+	
+	<modules>
+        	<module>helloworld</module>
+        </modules>
 	
 	<dependencies>
  
