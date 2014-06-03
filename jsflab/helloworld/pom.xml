@@ -15,7 +15,7 @@
 
 	<packaging>war</packaging>
 
-	<description>An example using JSF 2.</description>
+	<description>An example using JSF 2; a simple hello world !</description>
 	
  
 	<build>
