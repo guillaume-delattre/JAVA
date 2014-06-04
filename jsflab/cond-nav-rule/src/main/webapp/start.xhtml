@@ -8,7 +8,11 @@
  	<f:loadBundle basename="org.gdelattre.message" var="msg"/>
  
     <h:body>
-    	<h2><h:outputText value="#{msg['message']}" /></h2>
+    	<h2><h:outputText value="#{msg['message.test2']}" /></h2>
+    	<h:outputFormat value="#{msg['message.param2']}">
+		   <f:param value="param0" />
+		   <f:param value="param1" />
+		</h:outputFormat>
 	<h:form>
     	   <h:commandButton action="payment" value="Payment" />
 	</h:form>
