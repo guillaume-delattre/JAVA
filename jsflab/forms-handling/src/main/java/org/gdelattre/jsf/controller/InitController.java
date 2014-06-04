@@ -1,14 +1,11 @@
 package org.gdelattre.jsf.controller;
 
-import java.util.Map;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.faces.application.ProjectStage;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-
 import org.apache.log4j.Logger;
 
 @ManagedBean(eager=true)
