@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:start.xhtml" PATH="start.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:start.xhtml:0" NAME="item" PATH="start.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="payment::#ordermore.xhtml" NAME="output"
+    PATH="/ordermore.xhtml" TARGET="rules:#ordermore.xhtml"
+    TITLE="payment" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="payment::#payment.xhtml" NAME="output1"
+    PATH="/payment.xhtml" TARGET="rules:#payment.xhtml" TITLE="payment" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="payment::#register.xhtml" NAME="output2"
+    PATH="/register.xhtml" TARGET="rules:#register.xhtml"
+    TITLE="payment" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#payment.xhtml" PATH="/payment.xhtml"
+  SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ordermore.xhtml" PATH="/ordermore.xhtml"
+  SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#register.xhtml" PATH="/register.xhtml"
+  SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>
