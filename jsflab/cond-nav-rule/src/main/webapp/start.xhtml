@@ -2,10 +2,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+ 
+ 	<f:loadBundle basename="org.gdelattre.message" var="msg"/>
  
     <h:body>
-    	<h2>This is start.xhtml</h2>
+    	<h2><h:outputText value="#{msg['message']}" /></h2>
 	<h:form>
     	   <h:commandButton action="payment" value="Payment" />
 	</h:form>
