@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
  
 @ManagedBean(name="year")
-@SessionScoped
+@RequestScoped
 public class YearBean implements Serializable{
  
 	public String favYear1;

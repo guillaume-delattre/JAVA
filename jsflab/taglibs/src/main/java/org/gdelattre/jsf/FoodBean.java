@@ -4,11 +4,12 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
  
 @ManagedBean(name="food")
-@SessionScoped
+@RequestScoped
 public class FoodBean implements Serializable{
  
 	public String[] favFood1;

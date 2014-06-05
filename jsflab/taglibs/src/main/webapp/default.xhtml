@@ -172,6 +172,99 @@
 	 
 	    	</h:form>
     	</fieldset>
+    	
+    	<fieldset>
+    		<legend><h1>JSF 2 panelGrid example</h1></legend>
+ 
+			<h:form>
+				<h:panelGrid columns="3">
+		 
+					Enter a number : 
+		 
+					<h:inputText id="number" value="#{dummy.number}" 
+						size="20" required="true"
+						label="Number" >
+						<f:convertNumber />
+					</h:inputText>
+		 
+					<h:message for="number" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+    	</fieldset>
+    	
+    	<fieldset>
+			<legend><h1>JSF 2 message + messages example</h1></legend>
+ 
+			<h:form>
+		 
+			  <h:messages style="color:red;margin:8px;" />
+		 
+			  <br />
+		 
+			  <h:panelGrid columns="3">
+		 
+				Enter your username :
+		 
+				<h:inputText id="username" value="#{userBean.userName}" 
+					size="20" required="true"
+					label="UserName" >
+					<f:validateLength minimum="5" maximum="10" />
+				</h:inputText>
+		 
+				<h:message for="username" style="color:red" />
+		 
+				Enter your age :
+				<h:inputText id="age" value="#{userBean.age}" 
+					size="20" required="true"
+					label="Age" >
+					<f:validateLongRange for="age" minimum="1" maximum="200" />
+				</h:inputText>
+		 
+				<h:message for="age" style="color:red" />
+		 
+			  </h:panelGrid>
+		 
+			  <h:commandButton value="Submit" action="result" />
+		 
+		      </h:form>    	
+ 		  </fieldset>
+ 		  
+ 		  <fieldset>
+ 		  	<legend><h1>JSF Parameters example</h1></legend>
+ 		  	
+ 		  	<h:outputFormat value="Hello,{0}. You are from {1}.">
+				<f:param value="JSF User" />
+				<f:param value="China" />
+			</h:outputFormat>
+			
+			<h:form>
+				<h:commandButton id="submitButton" 
+							 value="Submit - US"
+							 action="#{userBean.outcome}">
+					<f:param name="country" value="United States" />
+				</h:commandButton>
+			</h:form>
+ 		  	
+ 		  </fieldset>
+ 		  
+ 		  <fieldset>
+ 		  	<legend><h1>JSF attributes examples</h1></legend>
+ 		  	<h:form>
+ 		  		<h:commandButton>
+				    <f:attribute name="value" value="Click Me" />				
+				</h:commandButton>
+ 		  	</h:form>
+ 		  	<h:form>
+ 		  		<h:commandButton actionListener="#{userBean.attrListener}" action="#{userBean.outcome1}" >
+ 		  			<f:attribute name="value" value="Click Me" />
+				    <f:attribute name="username" value="sfeir" />
+				</h:commandButton>
+ 		  	</h:form>
+ 		  </fieldset>
  
     </h:body>
 </html>
