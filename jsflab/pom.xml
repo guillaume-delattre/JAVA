@@ -11,10 +11,13 @@
 	<description>A module which contains sample projects using JSF 2.</description>
 	
 	<modules>
-        	<module>helloworld</module>
+        <module>helloworld</module>
 		<module>forms-handling</module>
 		<module>cond-nav-rule</module>
-        </modules>
+		<module>taglibs</module>
+		<module>international</module>
+		<module>facelets</module>
+    </modules>
 	
 	<dependencies>
 
@@ -53,10 +56,17 @@
 			<version>2.1</version>
 		</dependency>
                 <!-- Tomcat 6 need this -->
+		
 		<dependency>
-			<groupId>com.sun.el</groupId>
-			<artifactId>el-ri</artifactId>
-			<version>1.0</version>
+			<groupId>javax.el</groupId>
+			<artifactId>el-api</artifactId>
+			<version>2.2.1-b04</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>el-impl</artifactId>
+			<version>2.2</version>
 		</dependency>
 		
 		<dependency>
