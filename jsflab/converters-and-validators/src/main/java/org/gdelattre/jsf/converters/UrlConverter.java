@@ -7,7 +7,7 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 
-import org.apache.commons.validator.UrlValidator;
+import org.apache.commons.validator.routines.UrlValidator;
 import org.gdelattre.jsf.model.UrlBookmark;
 
 @FacesConverter("org.gdelattre.UrlConverter")
