@@ -2,12 +2,11 @@ package org.gdelattre.jsf;
 
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
  
 @ManagedBean(name="receipt")
-@SessionScoped
+@RequestScoped
 public class ReceiptBean implements Serializable{
  
 	double amount;

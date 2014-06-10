@@ -79,6 +79,58 @@
 		 
 			</h:form>
 	   </fieldset>
+	   
+	   <fieldset>
+	   		<legend><h1>&lt;h:validateLongRange&gt; example</h1></legend>
+	   		
+	   		<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your age : 
+		 
+					<h:inputText id="age"
+								 value="#{user.age}" 
+								 size="10"
+								 required="true"
+								 label="Age" >
+					        <f:validateLongRange maximum="150" minimum="1" />
+					</h:inputText>
+		 
+					<h:message for="age" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+			
+			<fieldset>
+				<legend><h1>&lt;h:validateDoubleRange&gt; example</h1></legend>
+				<h:form>
+	 
+					<h:panelGrid columns="3">
+			 
+						Enter your salary : 
+			 
+						<h:inputText id="salary" value="#{user.salary}" 
+							size="10" required="true"
+							label="Salary" >
+			 
+							<f:validateDoubleRange minimum="10.11" maximum="10000.11" />
+			 
+						</h:inputText>
+			 
+						<h:message for="salary" style="color:red" />
+			 
+					</h:panelGrid>
+			 
+					<h:commandButton value="Submit" action="result" />
+			 
+				</h:form>
+			</fieldset>
+			
+	   </fieldset>
  
     </h:body>
 </html>

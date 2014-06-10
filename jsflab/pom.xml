@@ -17,6 +17,7 @@
 		<module>taglibs</module>
 		<module>international</module>
 		<module>facelets</module>
+		<module>converters-and-validators</module>
     </modules>
 	
 	<dependencies>

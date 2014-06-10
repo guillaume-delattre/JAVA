@@ -8,7 +8,17 @@
       >
     <h:body>
     
-    	<label>The username's length [<b>#{user.username}</b>] is correct !</label>
+    	<h:panelGroup>
+	    	<h:panelGroup rendered="#{not empty user.username}">
+	    		The username's length [<b>#{user.username}</b>] is correct !
+	    	</h:panelGroup>
+	    	<h:panelGroup rendered="#{user.age != 0}">
+	    		The user's age [<b>#{user.age}</b>] is correct !
+	    	</h:panelGroup>
+	    	<h:panelGroup rendered="#{user.salary != 0}">
+	    		The user's salary [<b>#{user.salary}</b>] is correct !
+	    	</h:panelGroup>
+    	</h:panelGroup>
     
     </h:body>
     
