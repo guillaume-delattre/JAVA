@@ -53,9 +53,13 @@ public class UserBean implements Serializable{
 			fc.addMessage(passwordId, msg);
 			fc.renderResponse();
 	 
-		  }
-	 
 		}
+	 
+	}
+	
+	public String registerAction(){
+		return "result";
+	}
 	 
 	public String getUsername() {
 		return username;
