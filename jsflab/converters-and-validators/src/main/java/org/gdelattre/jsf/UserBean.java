@@ -3,8 +3,13 @@ package org.gdelattre.jsf;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.component.UIComponent;
+import javax.faces.component.UIInput;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ComponentSystemEvent;
  
 @ManagedBean(name="user")
 @RequestScoped
@@ -17,6 +22,40 @@ public class UserBean implements Serializable{
 	String confPassword;
 	Date dob;
 	String bookmarkURL;
+	String email;
+	
+	public void validatePassword(ComponentSystemEvent event) {
+		 
+		  FacesContext fc = FacesContext.getCurrentInstance();
+	 
+		  UIComponent components = event.getComponent();
+	 
+		  // get password
+		  UIInput uiInputPassword = (UIInput) components.findComponent("password");
+		  String password = uiInputPassword.getLocalValue() == null ? ""
+			: uiInputPassword.getLocalValue().toString();
+		  String passwordId = uiInputPassword.getClientId();
+	 
+		  // get confirm password
+		  UIInput uiInputConfirmPassword = (UIInput) components.findComponent("confirmPassword");
+		  String confirmPassword = uiInputConfirmPassword.getLocalValue() == null ? ""
+			: uiInputConfirmPassword.getLocalValue().toString();
+	 
+		  // Let required="true" do its job.
+		  if (password.isEmpty() || confirmPassword.isEmpty()) {
+			return;
+		  }
+	 
+		  if (!password.equals(confirmPassword)) {
+	 
+			FacesMessage msg = new FacesMessage("Password must match confirm password");
+			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+			fc.addMessage(passwordId, msg);
+			fc.renderResponse();
+	 
+		  }
+	 
+		}
 	 
 	public String getUsername() {
 		return username;
@@ -72,6 +111,14 @@ public class UserBean implements Serializable{
  
 	public void setBookmarkURL(String bookmarkURL) {
 		this.bookmarkURL = bookmarkURL;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+ 
+	public void setEmail(String email) {
+		this.email = email;
 	}
  
 }
