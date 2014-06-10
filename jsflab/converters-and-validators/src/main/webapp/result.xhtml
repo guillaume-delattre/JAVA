@@ -18,6 +18,12 @@
 	    	<h:panelGroup rendered="#{user.salary != 0}">
 	    		The user's salary [<b>#{user.salary}</b>] is correct !
 	    	</h:panelGroup>
+	    	<h:panelGroup rendered="#{not empty user.password}">
+	    		The user's password [<b>#{user.password}</b>] is valid !
+	    	</h:panelGroup>
+	    	<h:panelGroup rendered="#{not empty user.bookmarkURL}">
+	    		The user's bookmarkURL [<b>#{user.bookmarkURL}</b>] is valid !
+	    	</h:panelGroup>
     	</h:panelGroup>
     
     </h:body>

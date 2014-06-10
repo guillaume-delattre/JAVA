@@ -104,33 +104,140 @@
 				<h:commandButton value="Submit" action="result" />
 		 
 			</h:form>
+		</fieldset>
 			
-			<fieldset>
-				<legend><h1>&lt;h:validateDoubleRange&gt; example</h1></legend>
-				<h:form>
-	 
-					<h:panelGrid columns="3">
-			 
-						Enter your salary : 
-			 
-						<h:inputText id="salary" value="#{user.salary}" 
-							size="10" required="true"
-							label="Salary" >
-			 
-							<f:validateDoubleRange minimum="10.11" maximum="10000.11" />
-			 
-						</h:inputText>
-			 
-						<h:message for="salary" style="color:red" />
-			 
-					</h:panelGrid>
-			 
-					<h:commandButton value="Submit" action="result" />
-			 
-				</h:form>
-			</fieldset>
-			
-	   </fieldset>
+		<fieldset>
+			<legend><h1>&lt;h:validateDoubleRange&gt; example</h1></legend>
+			<h:form>
  
+				<h:panelGrid columns="3">
+		 
+					Enter your salary : 
+		 
+					<h:inputText id="salary" value="#{user.salary}" 
+						size="10" required="true"
+						label="Salary" >
+		 
+						<f:validateDoubleRange minimum="10.11" maximum="10000.11" />
+		 
+					</h:inputText>
+		 
+					<h:message for="salary" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>&lt;h:validateRequired&gt; example</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your password : 
+		 
+					<h:inputSecret id="password" value="#{user.password}" 
+						size="20" required="true"
+						label="Password" />
+		 
+					<h:message for="password" style="color:red" />
+		 
+					Enter your password again : 
+		 
+					<h:inputSecret id="confPassword" value="#{user.confPassword}" 
+						size="20" label="Confirm Password">
+						<f:validateRequired />	
+					</h:inputSecret>
+		 
+					<h:message for="confPassword" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+ 
+			</h:form>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>&lt;h:validateRegex&gt; example</h1></legend>
+			<h:form>
+ 
+		       <h:panelGrid columns="3">
+		 
+			  Enter your password : 
+		 
+			  <h:inputSecret id="password" value="#{user.password}" 
+				size="20" required="true"
+				label="Password">
+				<f:validateRegex 
+		                   pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" />
+			  </h:inputSecret>
+		 
+			  <h:message for="password" style="color:red" />
+		 
+		       </h:panelGrid>
+		 
+		       <h:commandButton value="Submit" action="result" />
+		 
+		     </h:form>			
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Customized messages properties example</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your username :
+		 
+					<h:inputText id="username" value="#{user.username}" 
+						size="20" required="true" label="Username">
+						<f:validateLength minimum="5" maximum="10" />
+					</h:inputText>
+		 
+					<h:message for="username" style="color:red" />
+		 
+					Enter your DOB :
+		 
+					<h:inputText id="dob" value="#{user.dob}" 
+						size="20" required="true" label="Date of Birth">
+						<f:convertDateTime />
+					</h:inputText>
+		 
+					<h:message for="dob" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Customized JSF Converter</h1></legend>
+			<h:form>
+ 
+			  <h:panelGrid columns="3">
+		 
+				Enter your bookmark URL :
+		 
+				<h:inputText id="bookmarkURL" value="#{user.bookmarkURL}" 
+					size="20" required="true" label="Bookmark URL">
+					<f:converter converterId="org.gdelattre.UrlConverter" />
+				</h:inputText>
+		 
+				<h:message for="bookmarkURL" style="color:red" />
+		 
+			  </h:panelGrid>
+		 
+			  <h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+			
     </h:body>
 </html>
