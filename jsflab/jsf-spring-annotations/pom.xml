@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.gdelattre.jsf</groupId>
-	<artifactId>jsf-spring</artifactId>
+	<artifactId>jsf-spring-annotations</artifactId>
 	<version>1.0.0</version>
 
 	<parent>
@@ -15,10 +15,11 @@
 
 	<packaging>war</packaging>
 
-	<description>An example using JSF 2 with spring framework</description>
+	<description>An example using JSF 2 with Spring framework using annotations!</description>
+	
  
 	<build>
-		<finalName>jsf-spring</finalName>
+		<finalName>helloworld</finalName>
  
 	</build>
 	
