@@ -79,6 +79,256 @@
 		 
 			</h:form>
 	   </fieldset>
+	   
+	   <fieldset>
+	   		<legend><h1>&lt;h:validateLongRange&gt; example</h1></legend>
+	   		
+	   		<h:form>
  
+				<h:panelGrid columns="3">
+		 
+					Enter your age : 
+		 
+					<h:inputText id="age"
+								 value="#{user.age}" 
+								 size="10"
+								 required="true"
+								 label="Age" >
+					        <f:validateLongRange maximum="150" minimum="1" />
+					</h:inputText>
+		 
+					<h:message for="age" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+			
+		<fieldset>
+			<legend><h1>&lt;h:validateDoubleRange&gt; example</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your salary : 
+		 
+					<h:inputText id="salary" value="#{user.salary}" 
+						size="10" required="true"
+						label="Salary" >
+		 
+						<f:validateDoubleRange minimum="10.11" maximum="10000.11" />
+		 
+					</h:inputText>
+		 
+					<h:message for="salary" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>&lt;h:validateRequired&gt; example</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your password : 
+		 
+					<h:inputSecret id="password" value="#{user.password}" 
+						size="20" required="true"
+						label="Password" />
+		 
+					<h:message for="password" style="color:red" />
+		 
+					Enter your password again : 
+		 
+					<h:inputSecret id="confPassword" value="#{user.confPassword}" 
+						size="20" label="Confirm Password">
+						<f:validateRequired />	
+					</h:inputSecret>
+		 
+					<h:message for="confPassword" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+ 
+			</h:form>
+			
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>&lt;h:validateRegex&gt; example</h1></legend>
+			<h:form>
+ 
+		       <h:panelGrid columns="3">
+		 
+			  Enter your password : 
+		 
+			  <h:inputSecret id="password" value="#{user.password}" 
+				size="20" required="true"
+				label="Password">
+				<f:validateRegex 
+		                   pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" />
+			  </h:inputSecret>
+		 
+			  <h:message for="password" style="color:red" />
+		 
+		       </h:panelGrid>
+		 
+		       <h:commandButton value="Submit" action="result" />
+		 
+		     </h:form>			
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Customized messages properties example</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+		 
+					Enter your username :
+		 
+					<h:inputText id="username" value="#{user.username}" 
+						size="20" required="true" label="Username">
+						<f:validateLength minimum="5" maximum="10" />
+					</h:inputText>
+		 
+					<h:message for="username" style="color:red" />
+		 
+					Enter your DOB :
+		 
+					<h:inputText id="dob" value="#{user.dob}" 
+						size="20" required="true" label="Date of Birth">
+						<f:convertDateTime />
+					</h:inputText>
+		 
+					<h:message for="dob" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Customized JSF Converter</h1></legend>
+			<h:form>
+ 
+			  <h:panelGrid columns="3">
+		 
+				Enter your bookmark URL :
+		 
+				<h:inputText id="bookmarkURL" value="#{user.bookmarkURL}" 
+					size="20" required="true" label="Bookmark URL">
+					<f:converter converterId="org.gdelattre.UrlConverter" />
+				</h:inputText>
+		 
+				<h:message for="bookmarkURL" style="color:red" />
+		 
+			  </h:panelGrid>
+		 
+			  <h:commandButton value="Submit" action="result" />
+		 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Customized JSF Validators</h1></legend>
+			<h:form>
+ 
+				<h:panelGrid columns="3">
+	 
+				  Enter your email :
+		 
+				  <h:inputText id="email" value="#{user.email}" 
+					size="20" required="true" label="Email Address">
+		 
+					<f:validator validatorId="org.gdelattre.EmailValidator" />
+		 
+				  </h:inputText>
+		 
+				  <h:message for="email" style="color:red" />
+		 
+				</h:panelGrid>
+		 
+				<h:commandButton value="Submit" action="result" />
+	 
+		   </h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Multiple components validator : first method with ComponentSystemEvent</h1></legend>
+			<h:form id="register">
+ 
+			    <h:message for="RegisterGroupPanel" style="color:red;" />
+			 
+			    <h:panelGrid columns="3" id="RegisterGroupPanel">
+			 
+					<!-- register a PostValidateEvent -->
+					<f:event listener="#{user.validatePassword}" type="postValidate" />
+				 
+					<h:outputLabel for="username" value="Username : " />
+					<h:inputText id="username" value="#{user.username}" required="true"
+						requiredMessage="Please enter username" />
+					<h:message for="username" style="color: red;" />
+				 
+					<h:outputLabel for="password" value="Password : " />
+					<h:inputSecret id="password" value="#{user.password}" required="true"
+						requiredMessage="Please enter password" />
+					<h:message for="password" style="color: red;" />
+				 
+					<h:outputLabel for="confirmPassword" value="Confirm password : " />
+					<h:inputSecret id="confirmPassword" required="true"
+						requiredMessage="Please enter confirm password" />
+					<h:message for="confirmPassword" style="color: red;" />
+			 
+			    </h:panelGrid>
+			 
+				<h:commandButton action="thanks" value="register" />
+			 
+			</h:form>
+		</fieldset>
+		
+		<fieldset>
+			<legend><h1>Multiple components validator : second method with &lt;f:attributes&gt;</h1></legend>
+			<h:form id="register1">
+ 
+			    <h:message for="RegisterGroupPanel" style="color:red;" />
+			 
+			    <h:panelGrid columns="3" id="RegisterGroupPanel">
+			 
+				<h:outputLabel for="username" value="Username : " />
+				<h:inputText id="username" value="#{user.username}" required="true"
+					requiredMessage="Please enter username" />
+				<h:message for="username" style="color: red;" />
+			 
+				<h:outputLabel for="password" value="Password : " />
+				<h:inputSecret id="password" value="#{user.password}" required="true"
+					requiredMessage="Please enter password">
+					<f:validator validatorId="passwordValidator" />
+					<f:attribute name="confirmPassword" value="#{confirmPassword}" />
+				</h:inputSecret>
+				<h:message for="password" style="color: red;" />
+			 
+				<h:outputLabel for="confirmPassword" value="Confirm password : " />
+				<h:inputSecret id="confirmPassword" required="true"
+					binding="#{confirmPassword}"
+					requiredMessage="Please enter confirm password" />
+				<h:message for="confirmPassword" style="color: red;" />
+			 
+			    </h:panelGrid>
+			 
+				<h:commandButton action="thanks" value="register" />
+		 
+		    </h:form>
+		</fieldset>
+			
     </h:body>
 </html>

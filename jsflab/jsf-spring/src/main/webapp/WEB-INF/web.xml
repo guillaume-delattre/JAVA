@@ -6,7 +6,7 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
  
-	<display-name>converters-and-validators</display-name>
+	<display-name>jsf-spring</display-name>
  
 	<!-- Change to "Production" when you are ready to deploy -->
 	<context-param>
@@ -15,14 +15,18 @@
 	</context-param>
 	
 	<context-param>
-		<param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
-		<param-value>true</param-value>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
  
 	<!-- Welcome page -->
 	<welcome-file-list>
 		<welcome-file>faces/default.xhtml</welcome-file>
 	</welcome-file-list>
+	
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
  
 	<!-- JSF mapping -->
 	<servlet>

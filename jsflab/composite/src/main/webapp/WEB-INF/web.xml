@@ -6,17 +6,12 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
  
-	<display-name>converters-and-validators</display-name>
+	<display-name>JSF 2 composite</display-name>
  
 	<!-- Change to "Production" when you are ready to deploy -->
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
-	</context-param>
-	
-	<context-param>
-		<param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
-		<param-value>true</param-value>
 	</context-param>
  
 	<!-- Welcome page -->

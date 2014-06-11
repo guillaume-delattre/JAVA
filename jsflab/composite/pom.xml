@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.gdelattre.jsf</groupId>
-	<artifactId>converters-and-validators</artifactId>
+	<artifactId>composite</artifactId>
 	<version>1.0.0</version>
 
 	<parent>
@@ -15,22 +15,12 @@
 
 	<packaging>war</packaging>
 
-	<description>An example using JSF 2 with converters and validators !</description>
+	<description>An example using JSF 2 with composites !</description>
 	
  
 	<build>
-		<finalName>converters-and-validators</finalName>
+		<finalName>composites</finalName>
  
 	</build>
-	
-	<dependencies>
-		
-		<dependency>
-			<groupId>commons-validator</groupId>
-			<artifactId>commons-validator</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-		
-	</dependencies>
 
 </project>
