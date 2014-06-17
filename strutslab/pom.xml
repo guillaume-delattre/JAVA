@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.gdelattre.struts</groupId>
+	<artifactId>strutslab</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+
+	<description>A project containing some sample application built with Apache Struts 2 framework.</description>
+	<build>
+		<finalName>strutslab</finalName>
+	</build>
+	
+	<modules>
+        <module>helloworld</module>
+    </modules>
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.16.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+
+	</dependencies>
+
+</project>
