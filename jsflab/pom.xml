@@ -18,6 +18,9 @@
 		<module>international</module>
 		<module>facelets</module>
 		<module>converters-and-validators</module>
+		<module>composite</module>
+		<module>jsf-spring</module>
+		<module>jsf-spring-annotations</module>
     </modules>
 	
 	<dependencies>
